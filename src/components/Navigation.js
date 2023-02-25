@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Logo from "../images/fish_logo.png"
+import "../styles/Navigation.css"
 function Nav() {
   const navStyle = {
     color: "white",
@@ -9,7 +10,7 @@ function Nav() {
   return (
     <nav>
       <Link to="/">
-        <h3>Logo</h3>
+        <img className="logo-img" src={Logo} alt="logo displaying a fish"/>
       </Link>
       <ul className="nav-links">
         <Link style={navStyle} to="/about">
