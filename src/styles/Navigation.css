@@ -3,7 +3,20 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background: rgb(187, 187, 250);
+    background: #405cf5;
+}
+
+.link-item{
+    color: white;
+    text-decoration: none;
+}
+
+.logo-text{
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-decoration: none;
+    font-family: 'Grand Hotel', cursive;
 }
 
 .nav-links {
@@ -15,6 +28,19 @@ nav {
 }
 
 .logo-img{
-    width: 150px;
+    width: 100px;
     height: auto;
+}
+
+.logo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    font-family: 'Zilla Slab', serif;
+    font-weight: 700;
+    font-size: 3rem;
 }

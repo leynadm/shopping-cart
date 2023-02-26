@@ -43,4 +43,13 @@ table {
 }
 
 /* CSS Starts */
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;700&family=Grand+Hotel&family=Ole&family=Oooh+Baby&family=Rubik+Marker+Hatch&family=Splash&family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;700&family=Grand+Hotel&family=Ole&family=Oooh+Baby&family=Rubik+Marker+Hatch&family=Splash&family=Yuji+Mai&family=Zilla+Slab:wght@400;500;600&display=swap');
+
+body::-webkit-scrollbar {
+	width: 0.25em;
+	background-color: #F5F5F5;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+	background-color: #000000;
+  }

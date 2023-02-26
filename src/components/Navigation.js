@@ -1,26 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/fish_logo.png"
-import "../styles/Navigation.css"
+import Logo from "../images/fish_logo.png";
+import "../styles/Navigation.css";
 function Nav() {
-  const navStyle = {
-    color: "white",
-  };
-
   return (
     <nav>
-      <Link to="/">
-        <img className="logo-img" src={Logo} alt="logo displaying a fish"/>
+      <Link className="link-item" to="/">
+        <div className="logo-container">
+          <img className="logo-img" src={Logo} alt="logo displaying a fish" />
+          <div className="logo-text link-item">The Fish Stuff Shop</div>
+        </div>
       </Link>
       <ul className="nav-links">
-        <Link style={navStyle} to="/about">
-          <li>About</li>
-        </Link>
-        <Link style={navStyle} to="/shop">
+        <Link className="link-item" to="/shop">
           <li>Shop</li>
         </Link>
-        <Link style={navStyle} to="/orders">
+        <Link className="link-item" to="/orders">
           <li>My Orders</li>
+        </Link>
+        <Link className="link-item" to="/about">
+          <li>About</li>
         </Link>
       </ul>
     </nav>
