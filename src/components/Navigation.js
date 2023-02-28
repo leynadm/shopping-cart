@@ -11,17 +11,32 @@ function Nav() {
           <div className="logo-text link-item">The Fish Stuff Shop</div>
         </div>
       </Link>
+
       <ul className="nav-links">
         <Link className="link-item" to="/shop">
-          <li>Shop</li>
+          <li>
+            <span class="material-symbols-outlined nav-symbol">
+              shopping_bag
+            </span>
+            <div>Shop</div>
+          </li>
         </Link>
         <Link className="link-item" to="/orders">
-          <li>My Orders</li>
+          <li>
+            <span class="material-symbols-outlined nav-symbol">
+              shopping_cart
+            </span>
+            <div>My Cart</div>
+          </li>
         </Link>
         <Link className="link-item" to="/about">
-          <li>About</li>
+          <li>
+            <span class="material-symbols-outlined nav-symbol">info</span>
+            <div>About</div>
+          </li>
         </Link>
       </ul>
+
     </nav>
   );
 }

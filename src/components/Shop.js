@@ -16,6 +16,7 @@ import imgTackleBox from "../images/empty_tackle_box.png";
 
 const Shop = ({orderItems,setOrderItems}) => {
 
+
   const [items, setItems] = useState([
     {
       name: "Fishing Pole",
@@ -84,7 +85,8 @@ const Shop = ({orderItems,setOrderItems}) => {
       image: imgTackleBox,
       price: "55.00",
     },
-  ]);
+  ]
+  );
 
   return (
     <div className="shop-items">

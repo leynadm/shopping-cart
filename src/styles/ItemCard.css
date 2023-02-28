@@ -7,6 +7,7 @@
     padding: 1rem;
     margin: 0.5rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: rgb(240, 255, 255);
 }
 
 img{
@@ -119,4 +120,24 @@ input:invalid{
 .item-card-btn:active {
   background-color: #0039D7;
   border-color: #0039D7;
+}
+
+.error-text{
+  padding-top: 1rem;
+  color: red;
+  height: 1rem;
+}
+
+.item-in-cart{
+  display: flex;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+.item-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
