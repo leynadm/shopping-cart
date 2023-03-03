@@ -1,0 +1,10 @@
+.about-section{
+    font-family: 'Zilla Slab', serif;
+    font-size: 2rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}

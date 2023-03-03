@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Orders.css";
 import imgPaymentMethod from "../images/cards.png";
 
 function Orders({ orderItems, setOrderItems }) {
+  const [orderInfo, setOrderInfo] = useState("");
   const totalPrice = orderItems.reduce((total, item) => {
     return total + item.price * item.quantity;
   }, 0);
@@ -14,13 +15,28 @@ function Orders({ orderItems, setOrderItems }) {
   };
 
   const handleIncrement = (index) => {
-
-    /* 
-    if (orderItems[index].quantity < 10) {
-      console.log('yes')
+    const newOrderItems = [...orderItems];
+    const updatedOrderItem = { ...newOrderItems[index] };
+    const updatedQuantity = (updatedOrderItem.quantity += 1);
+    if (updatedQuantity <= 10) {
+      newOrderItems[index] = updatedOrderItem;
+      setOrderItems(newOrderItems);
+    } else {
+      setOrderInfo("Please remember you can only order 10 units of each item.");
+      setTimeout(() => {
+        setOrderInfo("");
+      }, 4000); // reset orderInfo state to empty string after 10 seconds
     }
-     */
-    
+  };
+
+  const handleDecrement = (index) => {
+    const newOrderItems = [...orderItems];
+    const updatedOrderItem = { ...newOrderItems[index] };
+
+    if ((updatedOrderItem.quantity -= 1) > 0) {
+      newOrderItems[index] = updatedOrderItem;
+      setOrderItems(newOrderItems);
+    }
   };
 
   if (orderItems.length === 0) {
@@ -39,7 +55,7 @@ function Orders({ orderItems, setOrderItems }) {
       <div className="order-checkout">
         <div className="order-checkout-title">Your order summary</div>
         {orderItems.map((item, index) => (
-          <div className="order-item">
+          <div key={index} className="order-item">
             <img
               className="checkout-item-image"
               src={item.image}
@@ -50,7 +66,10 @@ function Orders({ orderItems, setOrderItems }) {
               <div>{item.name}</div>
 
               <div className="quantity">
-                <button className="orders-card-btn orders-increment-by-one-btn" onClick={handleIncrement}>
+                <button
+                  className="orders-card-btn orders-increment-by-one-btn"
+                  onClick={() => handleIncrement(index)}
+                >
                   <span className="material-symbols-outlined order-button-icons">
                     keyboard_arrow_up
                   </span>
@@ -64,7 +83,10 @@ function Orders({ orderItems, setOrderItems }) {
                   value={item.quantity}
                 />
 
-                <button className="orders-card-btn orders-decrease-by-one-btn">
+                <button
+                  className="orders-card-btn orders-decrease-by-one-btn"
+                  onClick={() => handleDecrement(index)}
+                >
                   <span className="material-symbols-outlined order-button-icons">
                     keyboard_arrow_down
                   </span>
@@ -87,6 +109,10 @@ function Orders({ orderItems, setOrderItems }) {
             </div>
           </div>
         ))}
+
+        <div className="checkout-order-info">
+          <div>{orderInfo}</div>
+        </div>
 
         <div className="checkout-order-total">
           <div className="checkout-order-total-header">Total</div>

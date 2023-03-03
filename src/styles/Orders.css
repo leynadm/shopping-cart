@@ -191,3 +191,11 @@
     background-color: #0039D7;
     border-color: #0039D7;
   }
+
+.checkout-order-info{
+    font-family: 'Zilla Slab', serif;
+    grid-column: 1/4;
+    text-align: center;
+    color: red;
+    padding-top: 1rem;
+}

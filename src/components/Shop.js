@@ -14,8 +14,7 @@ import imgFishSonnarBetter from "../images/fish_sonnar_better.png";
 import imgTackleBox from "../images/empty_tackle_box.png";
 
 
-const Shop = ({orderItems,setOrderItems}) => {
-
+const Shop = ({orderItems,setOrderItems,quantity,setQuantity}) => {
 
   const [items, setItems] = useState([
     {

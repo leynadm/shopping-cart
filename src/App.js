@@ -7,8 +7,9 @@ import Shop from "./components/Shop";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
-  const [orderItems, setOrderItems] = useState([]);
 
+  const [orderItems, setOrderItems] = useState([]);
+  
   return (
     <Router>
       <div className="App">
@@ -25,7 +26,7 @@ function App() {
           <Route
             path="/orders"
             element={
-              <Orders orderItems={orderItems} setOrderItems={setOrderItems} />
+              <Orders orderItems={orderItems} setOrderItems={setOrderItems}/>
             }
           />
         </Routes>

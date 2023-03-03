@@ -7,14 +7,17 @@ function ItemCard({
   image,
   price,
   orderItems,
-  setOrderItems,
+  setOrderItems
 }) {
-  const [quantity, setQuantity] = useState(0);
+
   const [includeIcon, setIncludeIcon] = useState(true);
   const [buttonText, setButtonText] = useState("");
   const [cartBtnError, setCartBtnError] = useState("");
   const [itemInCart, setItemInCart] = useState("");
+  const [quantity, setQuantity] = useState(0);
 
+
+  console.log('logging quantity: ' + quantity)
   const handleAddToCart = () => {
     if (quantity > 0) {
       setIncludeIcon(false);
@@ -33,7 +36,7 @@ function ItemCard({
       }
       console.log(counter);
     }
-  }, []);
+  }, [orderItems,name]);
 
   const checkItemQuantity = () => {
     const existingItem = orderItems.find((item) => item.name === name);
