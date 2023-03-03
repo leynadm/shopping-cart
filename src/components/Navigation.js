@@ -5,7 +5,7 @@ import "../styles/Navigation.css";
 function Nav() {
   return (
     <nav>
-      <Link className="link-item" to="/">
+      <Link className="link-item" to="/shopping-cart">
         <div className="logo-container">
           <img className="logo-img" src={Logo} alt="logo displaying a fish" />
           <div className="logo-text link-item">The Fish Stuff Shop</div>

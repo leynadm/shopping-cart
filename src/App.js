@@ -11,11 +11,11 @@ function App() {
   const [orderItems, setOrderItems] = useState([]);
   
   return (
-    <Router>
+    <Router basename="shopping-cart">
       <div className="App">
         <Navigation />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/shopping-cart" element={<Homepage />} />
           <Route
             path="/shop"
             element={
